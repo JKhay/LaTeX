@@ -1,0 +1,70 @@
+\begin{figure*}[ht!]
+	\centering
+	
+	\begin{tikzpicture}
+	\begin{axis}[
+	width=130 mm,
+	height=70 mm,
+	title=(a),every axis title/.style={below right,at={(0,1)},draw=black,fill=white},
+	title={a)},
+	y label style={at={(axis description cs:-0.07,.5)},rotate=0,anchor=south},
+	xlabel={Modulus of elasticity [GPa]},
+	yticklabel style={/pgf/number format/.cd, fixed, fixed zerofill, precision=2, /tikz/.cd}, scaled ticks=false, 
+	xticklabel style={/pgf/number format/.cd, fixed, fixed zerofill, precision=0, 
+		/tikz/.cd},
+	ylabel={Frequency density [-]},
+	xmin=0, xmax=150,
+	ymin=0, ymax=0.05,
+	xtick={0,10,20,30,40,50,60,70,80,90,100,110,120,130,140,150},
+	ytick={0,0.01,0.02,0.03,0.04,0.05},
+	ymajorgrids=true,
+	grid style=dashed,
+	legend style={at={(0.98,0.95)},anchor=north east},
+	legend entries={\#1, \#2, \#3, \#4, \#5, Exp. PDF},
+	]
+	
+	\addplot [smooth,mark=none, samples=160,color=red, domain=0:40,fill]{gauss2(24.914,3.674)} \closedcycle;
+	\addplot [smooth,mark=none, samples=160,color=cyan, domain=0:50,fill]{gauss(33.848,4.848)} \closedcycle;
+	\addplot [smooth,mark=none, samples=160,color=green, domain=0:60,fill]{gauss3(45.037,2.237)} \closedcycle;
+	\addplot [smooth,mark=none, samples=160,color=orange, domain=20:120,fill]{gauss4(66.57,11.639)} \closedcycle;
+	\addplot [smooth,mark=none, samples=160,color=magenta, domain=0:150,fill]{gauss5(127,18.96)} \closedcycle;
+	\addplot [color=black, smooth, mark=x] table [x=e, y=PDF, col sep=semicolon] {C1PDF.csv};
+	
+	
+	\end{axis}
+	\end{tikzpicture}
+	\begin{tikzpicture}
+	\begin{axis}[
+	width=130 mm,
+	height=70 mm,
+	title=(b),every axis title/.style={below right,at={(0,1)},draw=black,fill=white},
+	title={b)},
+	y label style={at={(axis description cs:-0.07,.5)},rotate=0,anchor=south},
+	xlabel={Modulus of elasticity [GPa]},
+	yticklabel style={/pgf/number format/.cd, fixed, fixed zerofill, precision=2, /tikz/.cd}, scaled ticks=false, 
+	xticklabel style={/pgf/number format/.cd, fixed, fixed zerofill, precision=0, 
+		/tikz/.cd},
+	ylabel={Frequency density [-]},
+	xmin=0, xmax=150,
+	ymin=0, ymax=0.05,
+	xtick={0,10,20,30,40,50,60,70,80,90,100,110,120,130,140,150},
+	ytick={0,0.01,0.02,0.03,0.04,0.05},
+	ymajorgrids=true,
+	grid style=dashed,
+	legend style={at={(0.98,0.95)},anchor=north east},
+	legend entries={\#1, \#2, \#3, \#4, \#5, Exp. PDF},
+	]
+	
+	\addplot [smooth,mark=none, samples=160,color=red, domain=0:40,fill]{gauss6(12.313,3.770)} \closedcycle;
+	\addplot [smooth,mark=none, samples=160,color=cyan, domain=0:50,fill]{gauss7(27.353,6.169)} \closedcycle;
+	\addplot [smooth,mark=none, samples=160,color=green, domain=0:60,fill]{gauss8(45.967,5.010)} \closedcycle;
+	\addplot [smooth,mark=none, samples=160,color=orange, domain=20:120,fill]{gauss9(69.919,9.518)} \closedcycle;
+	\addplot [smooth,mark=none, samples=160,color=magenta, domain=0:150,fill]{gauss10(116.048,17.382)} \closedcycle;
+	\addplot [color=black, smooth, mark=star] table [x=ec6, y=pdfc6, col sep=semicolon] {C1PDF.csv};
+	
+	
+	\end{axis}
+	\end{tikzpicture}
+	\caption{Frequency plots of the samples a) PC b) SL. The bin-size for deconvolution of modulus of elasticity $ E $~=~1.5~GPa.}
+	\label{PDF_individual}
+\end{figure*}
