@@ -1,0 +1,129 @@
+\documentclass{article}
+\usepackage[margin=0.7in]{geometry}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{caption}
+\usepackage[export]{adjustbox}
+\usepackage{makecell}
+\renewcommand{\theadfont}{\normalsize\bfseries}
+\newlength{\imagewidth}
+\setlength{\imagewidth}{8.5cm}
+\newlength{\equationwidth}
+\setlength{\equationwidth}{\textwidth-\imagewidth-4\tabcolsep}
+
+
+\begin{document}
+
+\begin{table}
+\centering
+\abovedisplayskip=0pt
+\belowdisplayskip=0pt
+\begin{tabular}{ >{\centering\arraybackslash}p{\imagewidth} p{\equationwidth}}
+\toprule
+\thead{Experimental technique \\ and expected results} & \begin{tabular}{@{}p{0.9\equationwidth}r@{}} \thead{Property definition} &\thead{Eq.}\end{tabular}\\
+\midrule
+  \textbf{Nanoindentation (with Berkovich indenter) with CSM mode and load controlled} 
+  \includegraphics[width=0.85\imagewidth,valign=t]{fig_2.png}%
+  \captionof{figure}{a) Load-Displacement curve and b) example of hardness indentation map}%
+  \label{fig:2} &
+  \begin{tabular}[t]{@{}p{\equationwidth}@{}}%
+      {\begin{flalign} 
+         E^{\prime} & = \dfrac{S}{2\cdot 1.034}\,\sqrt{\dfrac{\pi}{f\left(F_{\mathrm{n}},\,h\right)}} \label{continuity_1}
+      \end{flalign}}
+      \\ 
+      {\begin{flalign} 
+        E & = \left(1-\nu^2\right)\, \left( \dfrac{1}{E^{\prime}}-\dfrac{1-\nu_{\mathrm{ind}}^2}{E_{\mathrm{ind}}}\right)^{-1} \label{continuity_2}
+      \end{flalign}} 
+      \\ 
+      {\begin{flalign} 
+        H & = \dfrac{F_{\mathrm{n,\,max}}}{f\left(F_{\mathrm{n}},\,h\right)} \label{continuity_3}
+      \end{flalign}} 
+      
+      {\begin{flalign} 
+        \sigma_e & = \dfrac{H}{2.8} \label{continuity_4}
+      \end{flalign}} 
+      \end{tabular}\\
+         
+    %%%%%% 2nd %%%%%%
+    
+   
+  \textbf{Nanoindentation (with sharp pyramidal indenter) load controlled} 
+  \includegraphics[width=0.85\imagewidth,valign=t]{fig_3.png}%
+  \captionof{figure}{a) Load-Displacement curve and b) scheme of residual indent with radial cracking.}%
+  \label{fig:3} &
+  \begin{tabular}[t]{@{}p{\equationwidth}@{}}%
+      {\begin{flalign} 
+         K_{\mathrm{Ic}} & = \alpha\,\left(\dfrac{E}{H}\right)^{0.5}\,\left(\dfrac{F_{\mathrm{crit}}}{C_{\mathrm{R}}^{1.5}}\right) \label{continuity_5}
+      \end{flalign}}
+      \\ 
+      {\begin{flalign} 
+        K_{\mathrm{Ic}} & \approx \sqrt[4]{\dfrac{H^3\cdot F_{\mathrm{crit}}}{21.7\times 10^3}} \label{continuity_6}
+      \end{flalign}} 
+      \\ 
+      {\begin{flalign} 
+        K_{\mathrm{Ic}} & = \left[\left(\dfrac{E}{\left(1-\nu^2\right)\,2\pi C_{\mathrm{R}}}\right) \left(\dfrac{U_{\mathrm{pop-in}}}{t}\right)\right]^{0.5} \label{continuity_7}
+      \end{flalign}} \\
+     
+      
+  \end{tabular}\\
+  
+      %%%%%% 3rd %%%%%%
+    
+   
+  \textbf{Nanoindentation or Nanoscratch} 
+  \includegraphics[width=0.75\imagewidth,valign=t]{fig_4.png}%
+  \captionof{figure}{a) Load-Displacement curve and b) and c) schemes of residual imprints.}%
+  \label{fig:4} &
+  \begin{tabular}[t]{@{}p{\equationwidth}@{}}%
+  {\begin{flalign} 
+         U & = \dfrac{1}{2tE_{\mathrm{c}}}\,\left(\dfrac{\nu_c \,\mu\,F_{\mathrm{crit}}}{w}\right)^2 \label{continuity_8}
+      \end{flalign}}
+      \\ 
+      {\begin{flalign} 
+         \Gamma & = f\left(w,\beta,t,l,\sigma_{\mathrm{R}}\right) \label{continuity_9}
+      \end{flalign}}
+      \\ 
+      {\begin{flalign} 
+        E_{\mathrm{int}} & = \left(\dfrac{1}{2}\left(\dfrac{\left(1-\nu_c^2\right)}{E_{\mathrm{c}}} + \dfrac{\left(1-\nu_s^2\right)}{E_{\mathrm{s}}}\right)\right)^{-1} \label{continuity_10}
+      \end{flalign}} 
+      \\ 
+      {\begin{flalign} 
+        K_{\mathrm{int}} & = \sqrt{\Gamma\,E_{\mathrm{int}}} \label{continuity_11}
+      \end{flalign}} \\
+    
+     
+      
+  \end{tabular}\\
+  
+        %%%%%% 4th %%%%%%
+    
+      \textbf{Nanoscratch or Pin-on-disk tribometry} 
+  \includegraphics[width=0.8\imagewidth,valign=t]{fig_5.png}%
+  \captionof{figure}{a) Tangential load-distance curve and b) scheme of residual groove (pin-on-disk).}%
+  \label{fig:5} &
+  \begin{tabular}[t]{@{}p{\equationwidth}@{}}%
+  {\begin{flalign} 
+         \mu & = \dfrac{F_{\mathrm{t,\,\infty}}}{F_{\mathrm{n}}} \label{continuity_12}
+      \end{flalign}}
+      \\ 
+      {\begin{flalign} 
+         k & = f\left(F_{\mathrm{n}},d,A,r\right) \label{continuity_13}
+      \end{flalign}}
+      \\ 
+       
+  \end{tabular}\\
+   \bottomrule
+    
+
+\end{tabular}
+ \caption{Summary of nanomechanical experiments and expected results for mechanical properties, adhesion and tribological property calculations.}\label{table}
+\end{table}
+
+%See table \ref{table} See figure \ref{image}
+\end{document}
+
+
