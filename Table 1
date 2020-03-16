@@ -13,7 +13,10 @@
 \newlength{\imagewidth}
 \setlength{\imagewidth}{8.5cm}
 \newlength{\equationwidth}
-\setlength{\equationwidth}{\textwidth-\imagewidth-4\tabcolsep}
+%\setlength{\equationwidth}{\textwidth-\imagewidth-4\tabcolsep}
+\setlength{\equationwidth}{\textwidth-\imagewidth-6\tabcolsep-2ex}
+\usepackage{rotating}
+\usepackage{multirow}
 
 
 \begin{document}
@@ -26,6 +29,7 @@
 \toprule
 \thead{Experimental technique \\ and expected results} & \begin{tabular}{@{}p{0.9\equationwidth}r@{}} \thead{Property definition} &\thead{Eq.}\end{tabular}\\
 \midrule
+\parbox[t]{2mm}{\multirow{22}{*}{\rotatebox[origin=c]{90}{Mechanical Properties}}}
   \textbf{Nanoindentation (with Berkovich indenter) with CSM mode and load controlled} 
   \includegraphics[width=0.85\imagewidth,valign=t]{fig_2.png}%
   \captionof{figure}{a) Load-Displacement curve and b) example of hardness indentation map}%
@@ -75,6 +79,7 @@
     
    
   \textbf{Nanoindentation or Nanoscratch} 
+  %\parbox[t]{2mm}{\multirow{10}{*}{\rotatebox[origin=c]{90}{Adhesion}}}
   \includegraphics[width=0.75\imagewidth,valign=t]{fig_4.png}%
   \captionof{figure}{a) Load-Displacement curve and b) and c) schemes of residual imprints.}%
   \label{fig:4} &
@@ -100,7 +105,7 @@
   \end{tabular}\\
   
         %%%%%% 4th %%%%%%
-    
+% \parbox[t]{2mm}{\multirow{8}{*}{\rotatebox[origin=c]{90}{Tribological properties}}}
       \textbf{Nanoscratch or Pin-on-disk tribometry} 
   \includegraphics[width=0.8\imagewidth,valign=t]{fig_5.png}%
   \captionof{figure}{a) Tangential load-distance curve and b) scheme of residual groove (pin-on-disk).}%
@@ -125,5 +130,9 @@
 
 %See table \ref{table} See figure \ref{image}
 \end{document}
+
+
+
+
 
 
